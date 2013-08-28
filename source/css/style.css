@@ -4,6 +4,7 @@
 
 @import 'vendor/normalize.css';
 @import 'base/base.css';
+@import '../fonts/libricons/web/libricons.css';
 
 @import 'layouts/layout.css';
 
