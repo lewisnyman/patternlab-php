@@ -1,0 +1,32 @@
+.message {
+  background: no-repeat 10px 19px;
+  border: 1px solid;
+  border-width: 1px 1px 1px 8px;
+  border-radius: 2px;
+  padding: 15px 20px 15px 35px;
+}
+
+.message--error {
+  background-color: #fcf4f2;
+  border-color: #f9c9bf #f9c9bf #f9c9bf #e62600;
+  background-image: url(../../_images/error.png);
+  color: #a51b00;
+}
+
+.message--warning {
+  background-color: #fdf8ed;
+  border-color: #f4daa6 #f4daa6 #f4daa6 #e09600;
+  background-image: url(../../_images/warning.png);
+  color: #734c00;
+}
+
+.message--success {
+  background-color: #f3faef;
+}
+
+.message--success {
+  background-color: #f3faef;
+  border-color: #c9e1bd #c9e1bd #c9e1bd #77b259;
+  background-image: url(../../_images/success.png);
+  color: #325e1c;
+}

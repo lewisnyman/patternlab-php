@@ -1,0 +1,70 @@
+/**
+ * @file
+ */
+
+/**
+ * Micro clearfix: contain floats, prevent topmost margin collapsing
+ * @see http://nicolasgallagher.com/micro-clearfix-hack/
+ *
+ * 1. One way to avoid an Opera bug when the 'contenteditable' attribute is
+ *    included anywhere else in the document. Otherwise it causes space to
+ *    appear at the top and bottom of the element.
+ * 2. The use of 'table' rather than 'block' is only necessary if using
+ *    ':before' to contain the top-margins of child elements.
+ */
+.clearfix:before,
+.clearfix:after,
+.float-container:before,
+.float-container:after {
+  content: ' ';  /* 1 */
+  display: table; /* 2 */
+}
+.clearfix:after,
+.float-container:after {
+  clear: both;
+}
+
+/**
+ * New block formatting context
+ *
+ * Provides some useful properties: element won’t wrap under floats, will
+ * contain floated children. Will not clip overflow.
+ */
+.block-container {
+  display: table-cell;
+  width: 9999em;
+}
+
+/**
+ * New positioning context
+ */
+.position-container {
+  position: relative;
+}
+
+/**
+ * Hide element visually but retain access for screen readers.
+ */
+.visually-hidden {
+  position: absolute;
+  overflow: hidden;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  border: 0;
+  clip: rect(1px, 1px, 1px, 1px);
+}
+
+/**
+ * Remove browser styles, especially for <buttons> and so on.
+ */
+.reset-appearance {
+  -webkit-appearance: none;
+  -moz-appearance:    none;
+  appearance:         none;
+  border: 0 none;
+  background: transparent;
+  padding: 0;
+  margin: 0;
+  line-height: inherit;
+}

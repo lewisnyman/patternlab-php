@@ -1,0 +1,65 @@
+/**
+ * Custom icons as an icon font.
+ * Created with http://icomoon.io/app/
+ */
+
+@font-face {
+  font-family: 'icomoon';
+  src:url('../../_fonts/icomoon.eot');
+  src:url('../../_fonts/icomoon.eot?#iefix') format('embedded-opentype'),
+    url('../../_fonts/icomoon.woff') format('woff'),
+    url('../../_fonts/icomoon.ttf') format('truetype'),
+    url('../../_fonts/icomoon.svg#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.icon {
+  font-family: 'icomoon';
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  -webkit-font-smoothing: antialiased;
+}
+.icon--next:before {
+  content: "\2398";
+}
+.icon--previous:before {
+  content: "\2397";
+}
+
+/**
+ * 1. Explicitly set the text direction so text will still be hidden off-screen,
+ *    even in RTL languages.
+ */
+.sprite-icon {
+  display: inline-block;
+  direction: ltr; /* 1 */
+  text-indent: -999em;
+  font-style: normal;
+}
+
+.sprite-icon--favstar {
+  background: url('../../_images/favstar.svg') no-repeat left top;
+  /*background-size: 20px 20px;*/
+  width: 20px;
+  height: 20px;
+  vertical-align: 1px;
+}
+.is-newly-inactive > .sprite-icon--favstar {
+  background-position: 0 top !important;
+}
+:hover > .sprite-icon--favstar {
+  background-position: -20px top;
+}
+.is-active > .sprite-icon--favstar {
+  background-position: -40px top;
+}
+.is-newly-active > .sprite-icon--favstar {
+  background-position: -40px top !important;
+}
+.is-active:hover > .sprite-icon--favstar {
+  background-position: -60px top;
+}

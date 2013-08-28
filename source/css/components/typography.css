@@ -1,0 +1,159 @@
+/**
+ * @file
+ * Typography component
+ *
+ * - utilities
+ * - headings (A, B, C, D)
+ * - body copy
+ * - captions
+ */
+
+
+/**
+ * Horizontal spacing/alignment utilities
+ */
+.align-start {
+  text-align: left; /* LTR */
+}
+.align-center {
+  text-align: center; /* LTR */
+}
+.align-end {
+  text-align: right; /* LTR */
+}
+
+.emsp-start {
+  margin-left: 1em; /* LTR */
+}
+.emsp-end {
+  margin-right: 1em; /* LTR */
+}
+.ensp-start {
+  margin-left: 0.5em; /* LTR */
+}
+.ensp-end {
+  margin-right: 0.5em; /* LTR */
+}
+
+
+/**
+ * Vertical spacing/alignment utilities
+ *
+ * Add vertical whitespace above or below the element in fractions of the
+ * baseline grid. Helps maintain a consistent (optimally readable)
+ * vertical rhythm down the page.
+ *
+ * - Uses rem units (with px fallback) to ensure these utilities apply the
+ *   correct amount of whitespace regardless of the font-size of the element.
+ * - Class names use a shorthand for fractions of a baseline:
+ *   f = full
+ *   h = half
+ *   q = quarter
+ *
+ * - The shorthand is additive (leader-fh is f + h or 1 + 0.5 = 1.5 baselines);
+ *   the larger of any additive values comes first, so the class 'trailer-hf'
+ *   should not exist.
+ */
+/* Half leader, 0.5 baselines */
+.leader-h {
+  margin-top: 12px;
+  margin-top: 0.75rem;
+}
+/* Full leader, 1 baseline */
+.leader,
+.leader-f {
+  margin-top: 24px;
+  margin-top: 1.5rem;
+}
+/* One-and-a-half leader, 1.5 baselines */
+.leader-fh {
+  margin-top: 36px;
+  margin-top: 2.25rem;
+}
+/* Double leader, 2 baselines */
+.leader-ff {
+  margin-top: 48px;
+  margin-top: 3rem;
+}
+
+/* Half trailer, 0.5 baselines */
+.trailer-h {
+  margin-bottom: 12px;
+  margin-bottom: 0.75rem;
+}
+/* Full trailer, 1 baseline */
+.trailer,
+.trailer-f {
+  margin-bottom: 24px;
+  margin-bottom: 1.5rem;
+}
+/* One-and-a-half trailer, 1.5 baselines */
+.trailer-fh {
+  margin-bottom: 36px;
+  margin-bottom: 2.25rem;
+}
+/* Double trailer, 2 baselines */
+.trailer-ff {
+  margin-bottom: 48px;
+  margin-bottom: 3rem;
+}
+
+/**
+ * Headings
+ *
+ * - Class names follow the standard typographers’ convention from Bringhurst
+ *   (A-head, B-head, etc.)
+ * - Heading classes do not apply margins; use the vertical spacing utilities
+ *   for spacing control.
+ */
+.heading-a {
+  font-size: 26px;
+  font-size: 1.625rem;
+  line-height: 30px;
+  line-height: 1.875rem;
+  font-weight: 600;
+  color: #333333;
+  -webkit-font-smoothing: antialiased;
+}
+.heading-b {
+  font-size: 22px;
+  font-size: 1.375rem;
+  line-height: 24px;
+  line-height: 1.5rem;
+  font-weight: 600;
+  color: #333333;
+  -webkit-font-smoothing: antialiased;
+}
+.heading-c {
+  font-size: 15px;
+  font-size: 0.938rem;
+  line-height: 24px;
+  line-height: 1.5rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #333333;
+  -webkit-font-smoothing: antialiased;
+}
+.heading-d {
+  font-size: 13px;
+  font-size: 0.813rem;
+  line-height: 18px;
+  line-height: 1.125rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #333333;
+  -webkit-font-smoothing: antialiased;
+}
+
+.caption {
+  font-size: 14px;
+  font-size: 0.875rem;
+  line-height: 18px;
+  line-height: 1.286rem;
+}
+
+.quiet {
+  color: #595959;
+}

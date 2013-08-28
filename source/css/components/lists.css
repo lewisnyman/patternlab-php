@@ -1,0 +1,31 @@
+/**
+ * @file
+ * Lists
+ *
+ * Low-level layout and spacing for collections of like UI elements
+ */
+
+/**
+ * Lay out a set of like siblings as as a vertical stack with appropriate
+ * inner padding.
+ */
+.block-sibling {
+  padding: .75em 0;
+}
+
+/**
+ * Lay out a set of like siblings horizontally, with appropriate horizontal
+ * space between.
+ *
+ * 1. Use right margin to prevent wrapped elements appearing indented.
+ * 2. Insert some inner padding between successive 'lines'.
+ */
+.inline-sibling {
+  float: left;
+  margin-right: 1.5em; /* 1 */
+  padding: 0.75em 0; /* 2 */
+}
+/* In supported browsers, clean up extra space on the last item. */
+.inline-sibling:last-child {
+  margin-right: 0;
+}

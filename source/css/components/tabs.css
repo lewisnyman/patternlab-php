@@ -1,0 +1,332 @@
+/**
+ * @file
+ * Tabbed navigation
+ */
+
+/* 1. compensate for tabs pulled up by 1px */
+.tabs {
+  padding-top: 1px;  /* 1 */
+}
+
+/* Ensure floats are contained. */
+.tabs:after,
+.secondary-tabs:after {
+  content: ' ';
+  display: block;
+  clear: both;
+}
+
+/* Tabs group */
+.is-collapse-enabled .tabs:before,
+.is-horizontal .tabs:before {
+  content: '';
+  display: block;
+  border-bottom: 1px solid #A6A6A6;
+  position: absolute;
+  bottom: 0;
+  left: -36px;
+  z-index: 10;
+  right: -36px;
+}
+
+/**
+ * Tab
+ *
+ * 1. Collapse borders on all tabs, including the first (when collapsed, the
+ *    active item and trigger are placed above the list)
+ * 2. Required by some elements such as <button>
+ *
+ * N.B. Assumes box-sizing: border-box applied globally.
+ */
+.tabs__tab {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  margin-top: -1px;  /* 1 */
+  padding: 9px 2em 7px 1em;
+  width: 100%;  /* 2 */
+  border: 1px solid #bfbfbf;
+  background-color: #f2f2f0;
+  color: #0074bd;
+  text-transform: uppercase;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  letter-spacing: 0.1em;
+  font-weight: 600;
+  font-size: 15px;
+  font-size: 0.938rem;
+  line-height: 24px;
+  line-height: 1.5rem;
+}
+.tabs__tab:first-child {
+  border-radius: 4px 4px 0 0;
+}
+.tabs__tab:last-child {
+  border-radius: 0 0 4px 4px;
+}
+.tabs__tab:link,
+.tabs__tab:focus,
+.tabs__tab:hover {
+  text-decoration: none;
+}
+.tabs__tab:focus,
+.tabs__tab:hover {
+  color: #008ee6;
+  background-color: #fafaf7;
+}
+/* Current tab */
+.tabs__tab.is-active {
+  z-index: 15;
+  border-color: #a6a6a6;
+  background-color: #ffffff;
+  color: #004f80;
+}
+
+/* Tab icon (rightward arrow) */
+.tabs__tab .icon {
+  display: block;
+  position: absolute;
+  top: 50%;
+  right: 8px;
+  font-size: 18px;
+  line-height: 1em;
+  margin-top: -0.5em;
+}
+.tabs__tab.is-active .icon {
+  color: #cccccc;
+}
+
+.tabs__trigger {
+  display: none;
+}
+
+
+/* ====================================
+   JS-dependent
+   ==================================== */
+
+/* Required to precisely align the absolutely-positioned active tab */
+.is-collapse-enabled .tabs__tab {
+  height: 42px;
+}
+/* Targets can be smaller on non-touchscreens */
+.no-touch .is-collapse-enabled .tabs__tab {
+  height: 36px;
+}
+.no-touch .tabs__tab {
+  font-size: 13px;
+  font-size: 0.813rem;
+  line-height: 18px;
+  line-height: 1.125rem;
+}
+
+/**
+ * 1. Top padding is used to create space at the top of element even when height
+ *    is zero, so we need to use the W3C box model.
+ * 2. Create space at the top of the stacked links. We’ll position the active
+ *    tab and the toggle in this space.
+ * 3. Collapse the height of the tabs container.
+ */
+.is-collapse-enabled .tabs {
+  -webkit-box-sizing: content-box;  /* 1 */
+  -moz-box-sizing:    content-box;  /* " */
+  box-sizing:         content-box;  /* " */
+  padding-top: 42px;  /* 2 */
+  max-height: 0;  /* 3 */
+  overflow: hidden;
+  -webkit-transition: max-height 0.15s ease-in-out;
+  -moz-transition:    max-height 0.15s ease-in-out;
+  -o-transition:      max-height 0.15s ease-in-out;
+  transition:         max-height 0.15s ease-in-out;
+}
+.no-touch .is-collapse-enabled .tabs {
+  padding-top: 36px;
+}
+/* Open state */
+.tabs.is-open {
+  max-height: 999em;
+}
+
+/* Border-radius management for collapsible tabs is different. Reset */
+.is-collapse-enabled .tabs__tab {
+  border-radius: 0;
+}
+/**
+ * Pull the active tab out of the stack and place it above and to one side.
+ */
+.is-collapse-enabled .tabs__tab.is-active {
+  position: absolute;
+  top: 1px;
+  left: 0;
+  width: 75%;
+  padding-bottom: 8px;
+  border-bottom: 0;
+  border-radius: 4px 0 0 0;
+}
+.is-open .tabs__tab.is-active {
+  border-color: #a6a6a6;
+  background-color: #ffffff;
+  color: #004f80;
+  padding-bottom: 7px;
+  border-bottom: 1px solid #a6a6a6;
+}
+/* Hide the nav-arrow icon on the active tab */
+.is-collapse-enabled .tabs__tab.is-active .icon {
+  display: none;
+}
+
+/**
+ * 1. Prevent Opera from rendering 1px too small. Since position is absolute,
+ *    this won’t break layout.
+ */
+.is-collapse-enabled .tabs__trigger {
+  display: block;
+  position: absolute;
+  z-index: 10;
+  right: 0;
+  top: 1px;
+  left: auto;
+  width: 25.5%;  /* 1 */
+  padding-right: 1em;
+  border-left: 0;
+  font-family: Arial, sans-serif;
+  font-size: 1.25em;
+  letter-spacing: 0.1em;
+  text-align: center;
+  border-radius: 0 4px 0 0;
+}
+
+/* Force priority of the horizontal state with a double-qualified selector  */
+.is-horizontal-enabled.is-horizontal .tabs {
+  max-height: none;
+  padding-top: 0;
+}
+
+.is-horizontal .tabs__tab {
+  float: left;
+  height: auto;
+  width: auto;
+  margin-top: 0;
+  padding-right: 1em;
+  border-bottom-color: #a6a6a6;
+}
+.is-horizontal .tabs__tab:first-child {
+  border-radius: 4px 0 0 0;
+}
+.is-horizontal .tabs__tab:last-child {
+  border-radius: 0 4px 0 0;
+}
+
+.is-horizontal .tabs__tab + .tabs__tab {
+  margin-left: -1px;
+}
+.is-horizontal .tabs__tab.is-active {
+  position: relative;
+  width: auto;
+  top: 0;
+  padding-bottom: 8px;
+  border-bottom: 0;
+  border-radius: 0;
+}
+.is-horizontal .tabs__tab.is-active:first-child {
+  border-radius: 4px 0 0 0;
+}
+
+.is-horizontal .tabs__trigger {
+  display: none;
+}
+
+.is-horizontal .icon {
+  display: none;
+}
+
+/* ====================================
+   Secondary Tabs
+   ==================================== */
+
+.secondary-tabs {
+  border-top: 1px solid #d9d8d4;
+  border-bottom: 1px solid #d9d8d4;
+  display: block;
+  margin-top: 24px;
+  margin-top: 1.5rem;
+}
+
+/* N.B. Assumes box-sizing: border-box applied globally. */
+.secondary-tabs__tab {
+  display: block;
+  padding: 7px 13px 5px;
+  border-bottom: 2px solid transparent;
+  color: #0074bd;
+  font-size: 14px;
+  font-size: 0.875rem;
+  position: relative;
+}
+/**
+ * Use generated content to render the vertical active bar so it can overlap
+ * adjacent borders.
+ */
+.secondary-tabs__tab:before {
+  content: '';
+  display: block;
+  position: absolute;
+  top: -1px;
+  left: -1px;
+  bottom: -3px;
+  width: 2px;
+  background-color: transparent;
+  z-index: 60;
+}
+/* Draw a horizontal rule between stacked tabs */
+.secondary-tabs__tab + .secondary-tabs__tab {
+  border-top: 1px solid #d9d8d4;
+}
+.secondary-tabs__tab:link {
+  text-decoration: none;
+}
+.secondary-tabs__tab.is-active {
+  color: #004f80;
+  z-index: 15;
+}
+.secondary-tabs__tab.is-active:before {
+  background-color: #004f80;
+}
+.secondary-tabs__tab:focus,
+.secondary-tabs__tab:hover {
+  color: #008ee6;
+}
+.secondary-tabs__tab:focus:before,
+.secondary-tabs__tab:hover:before {
+  background-color: #008ee6;
+}
+
+.is-horizontal .secondary-tabs {
+  border-width: 0 0 1px 0;
+  margin-top: 12px;
+  margin-top: 0.75rem;
+}
+/**
+ * 1. Allow the horizontal active bar to cover the bottom border.
+ */
+.is-horizontal .secondary-tabs__tab {
+  float: left;
+  position: relative;
+  top: 1px; /* 1 */
+  z-index: 5;
+  margin-left: 1em;
+  margin-right: 1em;
+  padding: 0 0 5px 0;
+  border-left-color: transparent;
+  border-top: 0;
+}
+.is-horizontal .secondary-tabs__tab:before {
+  display: none;
+}
+.is-horizontal .secondary-tabs__tab.is-active {
+  border-left-color: transparent;
+  border-bottom-color: #004f80;
+}
+.is-horizontal .secondary-tabs__tab:focus,
+.is-horizontal .secondary-tabs__tab:hover {
+  border-bottom-color: #008ee6;
+}

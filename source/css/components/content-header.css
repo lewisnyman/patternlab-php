@@ -1,0 +1,22 @@
+.content-header {
+  background: #ebeae4;
+  padding-top: 50px;
+  padding-bottom: 20px;
+}
+
+.content-header__title {
+  display: inline;
+  font-size: 1em;
+}
+
+.content-header__action {
+  color: #c4c4bd;
+  font-weight: 300;
+  padding-left: 1ex;
+  font-size: 0.75em;
+}
+
+.content-header__controls {
+  color: #c4c4bd;
+  float: right;
+}

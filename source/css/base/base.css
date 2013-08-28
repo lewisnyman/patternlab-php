@@ -1,0 +1,88 @@
+/**
+ * @file
+ * Default styling for native HTML semantics
+ *
+ * N.B. Normalize CSS provides foundational styles for enhancing cross-browser
+ * consistency.
+ * @see stylesheets/vendor/normalize
+ */
+
+/**
+ * Apply a natural box layout model to all elements
+ * @see http://paulirish.com/2012/box-sizing-border-box-ftw/
+ */
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/**
+ * Establish baseline grid
+ *
+ * 1. base font size: 16px
+ * 2. base line height: 24px
+ */
+html {
+  font-size: 100%;  /* 1 */
+  line-height: 1.5em;  /* 2 */
+}
+
+/**
+ * Lists are often not typographic (bulleted) lists.
+ */
+ul {
+  margin: 0;
+  padding-left: 0;
+  list-style: none;
+}
+
+p {
+  margin: 0 0 24px 0;
+  margin: 0 0 1.5rem 0;
+}
+
+/**
+ * Make legends render like block elements. Yes, it is possible!
+ * 1. Force block-like rendering; side-effect is shrink-wrapping
+ * 2. Force back to full-width
+ */
+legend {
+  float: left;  /* 1 */
+  width: 100%;  /* 2 */
+}
+
+
+/* ==========================================================================
+   Skin
+   ========================================================================== */
+
+body {
+  font-family: "Source Sans Pro", "Segoe UI", "Calibri", "Lucida Sans", "Lucida Grande", sans-serif;
+  color: #1a1a1a;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 600;
+  margin: 0;
+}
+
+a {
+  color: #0074bd; /* hsl(203, 100%, 37%) */
+  text-decoration: none;
+}
+a:focus,
+a:hover {
+  color: #008ee6; /* hsl(203, 100%, 45%) */
+  text-decoration: underline;
+}
+
+legend {
+  margin-bottom: 24px;
+  margin-bottom: 1.5rem;
+}
