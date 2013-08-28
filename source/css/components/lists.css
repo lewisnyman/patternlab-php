@@ -20,12 +20,14 @@
  * 1. Use right margin to prevent wrapped elements appearing indented.
  * 2. Insert some inner padding between successive 'lines'.
  */
-.inline-sibling {
-  float: left;
-  margin-right: 1.5em; /* 1 */
-  padding: 0.75em 0; /* 2 */
-}
-/* In supported browsers, clean up extra space on the last item. */
-.inline-sibling:last-child {
-  margin-right: 0;
+ @media screen and (min-width: 600px) {
+  .inline-sibling {
+    float: left;
+    margin-right: 1.5em; /* 1 */
+    padding: 0.75em 0; /* 2 */
+  }
+  /* In supported browsers, clean up extra space on the last item. */
+  .inline-sibling:last-child {
+    margin-right: 0;
+  }
 }

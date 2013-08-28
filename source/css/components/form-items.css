@@ -58,6 +58,7 @@ label {
 .button.search {
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
+  width: auto;
 }
 /* Form items: focused */
 .input-text:focus,
