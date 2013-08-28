@@ -83,7 +83,7 @@
 }
 
 /* Tab icon (rightward arrow) */
-.tabs__tab .icon {
+.tabs__tab .tabs__icon {
   display: block;
   position: absolute;
   top: 50%;
@@ -92,7 +92,7 @@
   line-height: 1em;
   margin-top: -0.5em;
 }
-.tabs__tab.is-active .icon {
+.tabs__tab.is-active .tabs__icon {
   color: #cccccc;
 }
 
@@ -171,7 +171,7 @@
   border-bottom: 1px solid #a6a6a6;
 }
 /* Hide the nav-arrow icon on the active tab */
-.is-collapse-enabled .tabs__tab.is-active .icon {
+.is-collapse-enabled .tabs__tab.is-active .tabs__icon {
   display: none;
 }
 
@@ -236,7 +236,7 @@
   display: none;
 }
 
-.is-horizontal .icon {
+.is-horizontal .tabs__icon {
   display: none;
 }
 

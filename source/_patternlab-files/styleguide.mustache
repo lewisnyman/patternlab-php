@@ -27,7 +27,7 @@
 	body[0].onclick = function() {
 		parent.postMessage({"bodyclick":"bodyclick"},window.location.protocol+"//"+window.location.host)
 	};
-	
+
 	var els = document.getElementsByClassName("patternLink");
 	for (i in els) {
 		els[i].onclick = function() {
