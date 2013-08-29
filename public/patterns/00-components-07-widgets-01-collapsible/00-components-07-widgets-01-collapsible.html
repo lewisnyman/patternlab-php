@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Pattern Lab Pattern</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width" />
+	
+	<!--
+		Remember that patterns are displayed from two-levels deep (e.g. patterns/patterntype-patternsubtype-patternname/patterntype-patternsubtype-patternname.html)
+		Therefore all calls to assets should have the ../../ in order to work in an apache-less environment
+	-->
+	<link rel="stylesheet" href="../../css/style.css" media="all" />
+	<script src="../../js/modernizr.js"></script>
+</head>
+<body>
+	
+	<!-- Start of Pattern -->
+ <div class="leader">
+    <details>
+      <summary>Show/Hide me</summary>
+      <div class="details__body">
+        <button class="button" type="button">Sleepy</button>
+        <button class="button" type="button">Dopey</button>
+      </div>
+    </details>
+</div>
+
+<div class="leader">
+  <div class="details-group">
+    <details>
+      <summary>Show/Hide me</summary>
+      <div class="details__body">
+        <form>
+            <label>Text field</label>
+            <input type="text" class="input-text">
+            <label>Textarea</label>
+            <textarea class="textarea"></textarea>
+        </form>
+      </div>
+    </details>
+    <details>
+      <summary>Show/Hide me 1</summary>
+      <div class="details__body">
+        <label>Text field</label>
+        <input type="text" class="input-text is-disabled" disabled="">
+        <p class="form-item-description">This text field is disabled.</p>
+      </div>
+    </details>
+    <details>
+      <summary>Show/Hide me 1</summary>
+      <div class="details__body">
+        <form>
+          <label>Text field</label>
+          <input type="text" class="input-text">
+        </form>
+      </div>
+    </details>
+  </div>
+</div>
+
+	<!-- End of Pattern -->
+
+	<!--
+		Remember that patterns are displayed from two-levels deep (e.g. patterns/patterntype-patternsubtype-patternname/patterntype-patternsubtype-patternname.html)
+		Therefore all calls to assets should have the ../../ in order to work in an apache-less environment
+	-->
+
+	<!-- DO NOT MODIFY -->
+	<script>
+
+		// alert the iframe parent that the pattern has loaded. for page follow.
+		parent.postMessage( { "url": window.location.host, "patternpartial": "components-collapsible"},window.location.protocol+"//"+window.location.host);
+
+		// if there are clicks on the iframe make sure the nav in the iframe parent closes
+		var body = document.getElementsByTagName('body');
+		body[0].onclick = function() {
+			parent.postMessage({"bodyclick": "bodyclick"},window.location.protocol+"//"+window.location.host)
+		};
+
+	</script>
+	<!-- /DO NOT MODIFY -->
+  <script src="../../js/vendor/jquery.min.js"></script>
+  <script src="../../js/components/jquery.intrinsic.js"></script>
+  <script src="../../js/components/jquery.dom-utils.js"></script>
+  <script src="../../js/components/jquery.collapse.js"></script>
+  <script src="../../js/components/jquery.nav-tabs.js"></script>
+
+  <script src="../../js/vendor/jquery-ui.custom.js"></script>
+  <script src="../../js/components/drupal.component.js"></script>
+  <script src="../../js/components/drupal.popup.js"></script>
+  <script src="../../js/components/drupal.menu.js"></script>
+
+  <script src="../../js/main.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,69 @@
+/**
+ * @file
+ * Default Layout
+ */
+
+/**
+ * Utility classes for simple floating.
+ * @todo determine if these names are acceptable for bi-directional use.
+ * Alternatives:
+ *   .l-left/right
+ *   .l-start/end
+ *   .l-upstream/downstream
+ *   .l-pull/push
+ */
+.l-pull {
+  float: left;
+}
+
+.l-push {
+  float: right;
+}
+
+.l-inline {
+  display: inline;
+}
+
+.l-inline-block {
+  display: inline-block;
+}
+
+.l-container {
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 6%;
+  padding-right: 6%;
+  max-width: 1200px;
+  overflow: hidden;
+}
+
+.the-page-header {
+  background-color: #ebeae4;
+  padding-top: 24px;
+  padding-top: 1.5rem;
+}
+
+.l-grid {
+  float: left;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.l-grid + .l-grid {
+  padding-left: 20px;
+}
+.l-grid--half {
+  width: 50%;
+}
+.l-grid--third {
+  width: 33%;
+}
+.l-grid--two-thirds {
+  width: 66%;
+}
+
+/* Demo block, for demonstration purposes only. */
+.demo-block {
+  background: #CCC;
+  height: 100px;
+}

@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Pattern Lab Pattern</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width" />
+	
+	<!--
+		Remember that patterns are displayed from two-levels deep (e.g. patterns/patterntype-patternsubtype-patternname/patterntype-patternsubtype-patternname.html)
+		Therefore all calls to assets should have the ../../ in order to work in an apache-less environment
+	-->
+	<link rel="stylesheet" href="../../css/style.css" media="all" />
+	<script src="../../js/modernizr.js"></script>
+</head>
+<body>
+	
+	<!-- Start of Pattern -->
+ <ul class="clearfix">
+      <li class="inline-sibling">
+
+        <button class="button" type="button">Button (button)</button>
+
+      </li>
+      <li class="inline-sibling">
+
+        <button class="button button--primary" type="button">Primary (button)</button>
+
+      </li>
+      <li class="inline-sibling">
+
+        <button class="button" type="button" disabled>Button (button, disabled)</button>
+
+      </li>
+    </ul>
+    <ul class="clearfix">
+      <li class="inline-sibling">
+
+        <input type="submit" class="button" value="Button (submit)" />
+
+      </li>
+      <li class="inline-sibling">
+
+        <input type="submit" class="button button--primary" value="Primary (submit)" />
+
+      </li>
+      <li class="inline-sibling">
+
+        <input type="submit" class="button" value="Button (submit, disabled)" disabled />
+
+      </li>
+    </ul>
+    <ul class="clearfix">
+      <li class="inline-sibling">
+
+        <a href="#" class="button">Button (link)</a>
+
+      </li>
+      <li class="inline-sibling">
+
+        <a href="#" class="button button--primary">Primary (link)</a>
+
+      </li>
+      <li class="inline-sibling">
+
+        <a href="#" class="button is-disabled">Button (link, disabled)</a>
+
+      </li>
+    </ul>
+    <ul class="clearfix">
+      <li class="inline-sibling">
+
+        <button class="button button--small" type="button">Small</button>
+
+      </li>
+      <li class="inline-sibling">
+
+        <input type="submit" class="button button--small" value="Small (submit)" />
+
+      </li>
+      <li class="inline-sibling">
+
+        <a href="#" class="button button--small">Small (link)</a>
+
+      </li>
+      <li class="inline-sibling">
+
+        <button class="button button--small" type="button" disabled>Small (disabled)</button>
+
+      </li>
+      <li class="inline-sibling">
+
+        <button class="button button--small button--primary" type="button">Small Primary</button>
+
+      </li>
+      <li class="inline-sibling">
+
+        <button class="button button--primary button--small" type="button" disabled>Small Primary (disabled)</button>
+
+      </li>
+    </ul>
+    <ul class="clearfix">
+      <li class="inline-sibling">
+
+        <button class="link link--danger" type="button">Danger action</button>
+
+      </li>
+      <li class="inline-sibling">
+
+        <button class="link link--danger" type="button" disabled>Danger action (disabled)</button>
+
+      </li>
+    </ul>
+
+	<!-- End of Pattern -->
+
+	<!--
+		Remember that patterns are displayed from two-levels deep (e.g. patterns/patterntype-patternsubtype-patternname/patterntype-patternsubtype-patternname.html)
+		Therefore all calls to assets should have the ../../ in order to work in an apache-less environment
+	-->
+
+	<!-- DO NOT MODIFY -->
+	<script>
+
+		// alert the iframe parent that the pattern has loaded. for page follow.
+		parent.postMessage( { "url": window.location.host, "patternpartial": "components-buttons"},window.location.protocol+"//"+window.location.host);
+
+		// if there are clicks on the iframe make sure the nav in the iframe parent closes
+		var body = document.getElementsByTagName('body');
+		body[0].onclick = function() {
+			parent.postMessage({"bodyclick": "bodyclick"},window.location.protocol+"//"+window.location.host)
+		};
+
+	</script>
+	<!-- /DO NOT MODIFY -->
+  <script src="../../js/vendor/jquery.min.js"></script>
+  <script src="../../js/components/jquery.intrinsic.js"></script>
+  <script src="../../js/components/jquery.dom-utils.js"></script>
+  <script src="../../js/components/jquery.collapse.js"></script>
+  <script src="../../js/components/jquery.nav-tabs.js"></script>
+
+  <script src="../../js/vendor/jquery-ui.custom.js"></script>
+  <script src="../../js/components/drupal.component.js"></script>
+  <script src="../../js/components/drupal.popup.js"></script>
+  <script src="../../js/components/drupal.menu.js"></script>
+
+  <script src="../../js/main.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,83 @@
+/**
+ * @file
+ * Collapsible
+ *
+ * Details and Accordion
+ */
+
+/**
+ * Single Detail element and a set wrapped in div.details-group
+ */
+
+details {
+  background: #fcfcfa;
+  border: 1px #cecece solid;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
+}
+
+summary {
+  color: #0074bd;
+  text-transform: uppercase;
+  cursor: pointer;
+  font-size: 15px;
+  font-size: 0.938rem;
+  line-height: 1em;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  padding: 12px 18px 12px;
+  text-shadow: 0 1px hsla(0, 0%, 100%, 0.6);
+}
+/**
+ * @todo Figure out how to betterindicate focus on summaries; We can’t just hide
+ * focus outlines: no good for accessibility.
+ */
+summary:focus,
+summary:hover {
+  outline: none;
+  color: #008ee6;
+}
+
+.details__body {
+  padding: 9px 18px 18px;
+}
+
+/*div details[open] summary {
+  margin-bottom: 16px;
+  margin-bottom: 1em;
+}*/
+
+.details-group details {
+margin-top: -1px;
+-webkit-border-radius: 0;
+-moz-border-radius: 0;
+border-radius: 0;
+}
+
+.details-group details:first-child {
+  margin-top: 0;
+  border-radius: 2px 2px 0 0;
+}
+
+.details-group details:last-child {
+  border-radius: 0 0 2px 2px;
+}
+
+.details-group details[open] {
+  background: #ebeae4;
+  border: 1px #c3c3c3 solid;
+  -webkit-box-shadow: inset 0 2px 2px rgba(0,0,0,0.1);
+  -moz-box-shadow: inset 0 2px 2px rgba(0,0,0,0.1);
+  box-shadow: inset 0 2px 2px rgba(0,0,0,0.1);
+}
+
+.details-group details[open] + details[open] {
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+}
+
+.details-group details[open] summary {
+color: #004d7e;
+}

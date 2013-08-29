@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Style Guide for a Specific Pattern Sub-Type</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" href="../../styleguide/css/styleguide.css" media="all" />
+    <link rel="stylesheet" href="../../css/style.css" media="all" />
+</head>
+<body>
+
+<!--Style Guide Main Content-->
+<div class="sg-main" role="main">
+
+	<!--Patterns-->
+	<div id="patterns">
+			<div class="sg-pattern">
+				<h2 class="sg-head sg-sub" ><a href="../../patterns/00-atoms-01-text-00-headings/00-atoms-01-text-00-headings.html" class="patternLink" data-patternpartial="atoms-headings">Headings</a></h2>
+				<h1 class="header-a trailer">Heading Level 1</h1>
+<h2 class="header-b trailer">Heading Level 2</h2>
+<h3 class="header-c trailer">Heading Level 3</h3>
+<h4 class="header-d">Heading Level 4</h4>
+
+			</div>
+			<div class="sg-pattern">
+				<h2 class="sg-head sg-sub" ><a href="../../patterns/00-atoms-01-text-02-headings-with-links/00-atoms-01-text-02-headings-with-links.html" class="patternLink" data-patternpartial="atoms-headings-with-links">Headings With Links</a></h2>
+				<h1 class="header-a trailer"><a href="#">Heading 1 with link</a></h1>
+<h2 class="header-b trailer"><a href="#">Heading 2 with link</a></h2>
+<h3 class="header-c trailer"><a href="#">Heading 3 with link</a></h3>
+<h4 class="header-d"><a href="#">Heading 4 with link</a></h4>
+
+			</div>
+			<div class="sg-pattern">
+				<h2 class="sg-head sg-sub" ><a href="../../patterns/00-atoms-01-text-03-paragraph/00-atoms-01-text-03-paragraph.html" class="patternLink" data-patternpartial="atoms-paragraph">Paragraph</a></h2>
+				<p>So, setting about it as methodically as men might smoke out a wasps' nest, the Martians spread this strange stifling vapour over the Londonward country. The horns of the crescent slowly moved apart, until at last they formed a line from Hanwell to Coombe and Malden. All night through their destructive tubes advanced.</p>
+			</div>
+			<div class="sg-pattern">
+				<h2 class="sg-head sg-sub" ><a href="../../patterns/00-atoms-01-text-04-blockquote/00-atoms-01-text-04-blockquote.html" class="patternLink" data-patternpartial="atoms-blockquote">Blockquote</a></h2>
+				<blockquote>
+	<p>A block quotation (also known as a long quotation or extract) is a quotation in a written document, that is set off from the main text as a paragraph, or block of text, and typically distinguished visually using indentation and a different typeface or smaller size quotation.</p>
+</blockquote>
+			</div>
+			<div class="sg-pattern">
+				<h2 class="sg-head sg-sub" ><a href="../../patterns/00-atoms-01-text-05-inline-elements/00-atoms-01-text-05-inline-elements.html" class="patternLink" data-patternpartial="atoms-inline-elements">Inline Elements</a></h2>
+				<div class="text">
+	<p><a href="#">This is a text link</a></p>
+
+	<p><strong>Strong is used to indicate strong importance</strong></p>
+
+	<p><em>This text has added emphasis</em></p>
+
+	<p>The <b>b element</b> is stylistically different text from normal text, without any special importance</p>
+
+	<p>The <i>i element</i> is text that is set off from the normal text</p>
+
+	<p>The <u>u element</u> is text with an unarticulated, though explicitly rendered, non-textual annotation</p>
+
+	<p><del>This text is deleted</del> and <ins>This text is inserted</ins></p>
+
+	<p><s>This text has a strikethrough</s></p>
+
+	<p>Superscript<sup>®</sup></p>
+
+	<p>Subscript for things like H<sub>2</sub>O</p>
+
+	<p><small>This small text is small for for fine print, etc.</small></p>
+
+	<p>Abbreviation: <abbr title="HyperText Markup Language">HTML</abbr></p>
+
+	<p>Keybord input: <kbd>Cmd</kbd></p>
+
+	<p><q cite="https://developer.mozilla.org/en-US/docs/HTML/Element/q">This text is a short inline quotation</q></p>
+
+	<p><cite>This is a citation</cite>
+
+	</p><p>The <dfn>dfn element</dfn> indicates a definition.</p>
+
+	<p>The <mark>mark element</mark> indicates a highlight</p>
+
+	<p><code>This is what inline code looks like.</code></p>
+
+	<p><samp>This is sample output from a computer program</samp></p>
+
+	<p>The <var>variarble element</var>, such as <var>x</var> = <var>y</var></p>
+</div><!--end .text-->
+			</div>
+			<div class="sg-pattern">
+				<h2 class="sg-head sg-sub" ><a href="../../patterns/00-atoms-01-text-08-messages/00-atoms-01-text-08-messages.html" class="patternLink" data-patternpartial="atoms-messages">Messages</a></h2>
+				<p class="message message--error"><i class="iconset-libricons icon-error message__icon" aria-hidden="true"></i>This is what an error message looks like</p>
+<p class="message message--warning"><i class="iconset-libricons icon-warning message__icon" aria-hidden="true"></i>This is what a warning message looks like</p>
+<p class="message message--success"><i class="iconset-libricons icon-check message__icon" aria-hidden="true"></i>This is what success looks like</p>
+
+			</div>
+	</div> <!--end #patterns-->
+
+</div><!--end .sg-main-->
+<script>
+	var body = document.getElementsByTagName('body');
+	body[0].onclick = function() {
+		parent.postMessage({"bodyclick":"bodyclick"},window.location.protocol+"//"+window.location.host)
+	};
+	var els = document.getElementsByClassName("patternLink");
+	for (i in els) {
+		els[i].onclick = function() {
+			parent.postMessage({"patternpartial":this.getAttribute("data-patternpartial")},window.location.protocol+"//"+window.location.host);
+			return false;
+		}
+	}
+</script>
+	<script src="../../js/components/jquery.intrinsic.js"></script>
+  <script src="../../js/components/jquery.dom-utils.js"></script>
+  <script src="../../js/components/jquery.collapse.js"></script>
+  <script src="../../js/components/jquery.nav-tabs.js"></script>
+
+  <script src="../../js/vendor/jquery-ui.custom.js"></script>
+  <script src="../../js/components/drupal.component.js"></script>
+
+  <script src="../../js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Style Guide for a Specific Pattern Sub-Type</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" href="../../styleguide/css/styleguide.css" media="all" />
+    <link rel="stylesheet" href="../../css/style.css" media="all" />
+</head>
+<body>
+
+<!--Style Guide Main Content-->
+<div class="sg-main" role="main">
+
+	<!--Patterns-->
+	<div id="patterns">
+			<div class="sg-pattern">
+				<h2 class="sg-head sg-sub" ><a href="../../patterns/00-atoms-00-global-00-colors/00-atoms-00-global-00-colors.html" class="patternLink" data-patternpartial="atoms-colors">Colors</a></h2>
+				<h3>Primary Palette</h3>
+<ul class="sg-colors">
+	<li>
+		<span class="sg-swatch" style="background: #ffffff;"></span>
+		<span class="sg-label">White #ffffff</span>
+	</li>
+	<li>
+		<span class="sg-swatch" style="background: #1a1a1a;"></span>
+		<span class="sg-label">Text #1a1a1a</span>
+	</li>
+	<li>
+		<span class="sg-swatch" style="background: #ebeae4;"></span>
+		<span class="sg-label">Burlap #ebeae4</span>
+	</li>
+	<li>
+		<span class="sg-swatch" style="background: #0074bd;"></span>
+		<span class="sg-label">Drupal Blue #0074bd </span>
+	</li>
+</ul>
+<h3>Secondary Palette</h3>
+<ul class="sg-colors">
+	<li>
+		<span class="sg-swatch" style="background: #fcfcfa;"></span>
+		<span class="sg-label">Eggshell #fcfcfa</span>
+	</li>
+	<li>
+		<span class="sg-swatch" style="background: #f5f5f2;"></span>
+		<span class="sg-label">Eggshell #2 #f5f5f2</span>
+	</li>
+	<li>
+		<span class="sg-swatch" style="background: hsla(0%, 0%, 42%, 0.65);"></span>
+		<span class="sg-label">Smoked Glass hsla(0, 0, 42%, 0.65)</span>
+	</li>
+	<li>
+		<span class="sg-swatch" style="background: #595959;"></span>
+		<span class="sg-label">Light text #595959</span>
+	</li>
+	<li>
+		<span class="sg-swatch" style="background: #40b6ff;"></span>
+		<span class="sg-label">Selection #40b6ff</span>
+	</li>
+	<li>
+		<span class="sg-swatch" style="background: #c72100;"></span>
+		<span class="sg-label">Danger #c72100</span>
+	</li>
+	<li>
+		<span class="sg-swatch" style="background: #e62600;"></span>
+		<span class="sg-label">Error #e62600</span>
+	</li>
+	<li>
+		<span class="sg-swatch" style="background: #e09600;"></span>
+		<span class="sg-label">Warning #e09600</span>
+	</li>
+	<li>
+		<span class="sg-swatch" style="background: #77b259;"></span>
+		<span class="sg-label">Success #77b259</span>
+	</li>
+</ul>
+
+			</div>
+			<div class="sg-pattern">
+				<h2 class="sg-head sg-sub" ><a href="../../patterns/00-atoms-00-global-01-fonts/00-atoms-00-global-01-fonts.html" class="patternLink" data-patternpartial="atoms-fonts">Fonts</a></h2>
+				<p>Primary font: "Source Sans Pro", "Segoe UI", "Calibri", "Lucida Sans", "Lucida Grande", sans-serif</p>
+<p><em>Primary font italic: "Source Sans Pro", "Segoe UI", "Calibri", "Lucida Sans", "Lucida Grande", sans-serif</em></p>
+<p><strong>Primary font bold: "Source Sans Pro", "Segoe UI", "Calibri", "Lucida Sans", "Lucida Grande", sans-serif</strong></p>
+
+			</div>
+	</div> <!--end #patterns-->
+
+</div><!--end .sg-main-->
+<script>
+	var body = document.getElementsByTagName('body');
+	body[0].onclick = function() {
+		parent.postMessage({"bodyclick":"bodyclick"},window.location.protocol+"//"+window.location.host)
+	};
+	var els = document.getElementsByClassName("patternLink");
+	for (i in els) {
+		els[i].onclick = function() {
+			parent.postMessage({"patternpartial":this.getAttribute("data-patternpartial")},window.location.protocol+"//"+window.location.host);
+			return false;
+		}
+	}
+</script>
+	<script src="../../js/components/jquery.intrinsic.js"></script>
+  <script src="../../js/components/jquery.dom-utils.js"></script>
+  <script src="../../js/components/jquery.collapse.js"></script>
+  <script src="../../js/components/jquery.nav-tabs.js"></script>
+
+  <script src="../../js/vendor/jquery-ui.custom.js"></script>
+  <script src="../../js/components/drupal.component.js"></script>
+
+  <script src="../../js/main.js"></script>
+</body>
+</html>

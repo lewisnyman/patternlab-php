@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Pattern Lab Pattern</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width" />
+	
+	<!--
+		Remember that patterns are displayed from two-levels deep (e.g. patterns/patterntype-patternsubtype-patternname/patterntype-patternsubtype-patternname.html)
+		Therefore all calls to assets should have the ../../ in order to work in an apache-less environment
+	-->
+	<link rel="stylesheet" href="../../css/style.css" media="all" />
+	<script src="../../js/modernizr.js"></script>
+</head>
+<body>
+	
+	<!-- Start of Pattern -->
+ <table>
+    <!-- @todo Figure out a table caption style -->
+    <!-- <caption>Caption</caption> -->
+    <thead>
+      <tr>
+        <th>
+          <input type="checkbox" />
+        </th>
+        <th class="heading-d">
+          Username
+        </th>
+        <th class="heading-d col-priority-medium">
+          Status
+        </th>
+        <th class="heading-d col-priority-medium">
+          Roles
+        </th>
+        <th class="heading-d table-priority-low">
+          Member for
+        </th>
+        <th>
+          <span class="heading-d table-header" href="#">Operations</span>
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><input type="checkbox" /></td>
+        <td><a href="#">ry5n</a></td>
+        <td class="col-priority-medium">Active</td>
+        <td class="col-priority-medium">Administrator</td>
+        <td class="table-priority-low">6 months, 1 week</td>
+        <td>
+          <div class="button-group js-split-button">
+            <button class="button button--small" type="button">Edit</button>
+            <button class="button button--small button--iconic button--popup js-popup" type="button" aria-haspopup="true" data-target="popup-1" data-component="popup"><i class="caret"><span class="visually-hidden">Menu</span></i></button>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td><input type="checkbox" /></td>
+        <td><a href="#">test</a></td>
+        <td class="col-priority-medium">Active</td>
+        <td class="col-priority-medium">Tester</td>
+        <td class="table-priority-low">3 months, 3 weeks</td>
+        <td>
+          <div class="button-group js-split-button">
+            <button class="button button--small" type="button">Edit</button>
+            <button class="button button--small button--iconic button--popup js-popup" type="button" aria-haspopup="true" data-target="popup-2" data-component="popup"><i class="caret"><span class="visually-hidden">Menu</span></i></button>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td><input type="checkbox" /></td>
+        <td><a href="#">test2</a></td>
+        <td class="col-priority-medium">Active</td>
+        <td class="col-priority-medium">Tester</td>
+        <td class="table-priority-low">2 months, 1 week</td>
+        <td>
+          <div class="button-group js-split-button">
+            <button class="button button--small" type="button">Edit</button>
+            <button class="button button--small button--iconic button--popup js-popup" type="button" aria-haspopup="true" data-target="popup-3" data-component="popup"><i class="caret"><span class="visually-hidden">Menu</span></i></button>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td><input type="checkbox" /></td>
+        <td><a href="#">test3</a></td>
+        <td class="col-priority-medium">Active</td>
+        <td class="col-priority-medium">Tester</td>
+        <td class="table-priority-low">3 weeks, 4 days</td>
+        <td>
+          <div class="button-group js-split-button">
+            <button class="button button--small" type="button">Edit</button>
+            <button class="button button--small button--iconic button--popup js-popup" type="button" aria-haspopup="true" data-target="popup-4" data-component="popup"><i class="caret"><span class="visually-hidden">Menu</span></i></button>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td><input type="checkbox" /></td>
+        <td><a href="#">test4</a></td>
+        <td class="col-priority-medium">Active</td>
+        <td class="col-priority-medium">Tester</td>
+        <td class="table-priority-low">6 weeks</td>
+        <td>
+          <div class="button-group js-split-button">
+            <button class="button button--small" type="button">Edit</button>
+            <button class="button button--small button--iconic button--popup js-popup" type="button" aria-haspopup="true" data-target="popup-5" data-component="popup"><i class="caret"><span class="visually-hidden">Menu</span></i></button>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="popup" id="popup-1" aria-hidden="true">
+    <ul class="menu js-menu" role="menu" data-component="menu" tabindex="-1">
+      <li role="presentation">
+        <a href="#" class="menu__item js-menu__item" role="menuitem">Cut</a>
+      </li>
+      <li role="presentation">
+        <a href="#" class="menu__item js-menu__item" role="menuitem">Copy</a>
+      </li>
+      <li role="presentation">
+        <a href="#" class="menu__item js-menu__item" role="menuitem">Paste</a>
+      </li>
+    </ul>
+  </div>
+
+  <div class="popup" id="popup-2" aria-hidden="true">
+    <ul class="menu js-menu" role="menu" data-component="menu" tabindex="-1">
+      <li role="presentation">
+        <a href="#" class="menu__item js-menu__item" role="menuitem">Cut</a>
+      </li>
+      <li role="presentation">
+        <a href="#" class="menu__item js-menu__item" role="menuitem">Copy</a>
+      </li>
+      <li role="presentation">
+        <a href="#" class="menu__item js-menu__item" role="menuitem">Paste</a>
+      </li>
+    </ul>
+  </div>
+
+  <div class="popup" id="popup-3" aria-hidden="true">
+    <ul class="menu js-menu" role="menu" data-component="menu" tabindex="-1">
+      <li role="presentation">
+        <a href="#" class="menu__item js-menu__item" role="menuitem">Cut</a>
+      </li>
+      <li role="presentation">
+        <a href="#" class="menu__item js-menu__item" role="menuitem">Copy</a>
+      </li>
+      <li role="presentation">
+        <a href="#" class="menu__item js-menu__item" role="menuitem">Paste</a>
+      </li>
+    </ul>
+  </div>
+
+  <div class="popup" id="popup-4" aria-hidden="true">
+    <ul class="menu js-menu" role="menu" data-component="menu" tabindex="-1">
+      <li role="presentation">
+        <a href="#" class="menu__item js-menu__item" role="menuitem">Cut</a>
+      </li>
+      <li role="presentation">
+        <a href="#" class="menu__item js-menu__item" role="menuitem">Copy</a>
+      </li>
+      <li role="presentation">
+        <a href="#" class="menu__item js-menu__item" role="menuitem">Paste</a>
+      </li>
+    </ul>
+  </div>
+
+  <div class="popup" id="popup-5" aria-hidden="true">
+    <ul class="menu js-menu" role="menu" data-component="menu" tabindex="-1">
+      <li role="presentation">
+        <a href="#" class="menu__item js-menu__item" role="menuitem">Cut</a>
+      </li>
+      <li role="presentation">
+        <a href="#" class="menu__item js-menu__item" role="menuitem">Copy</a>
+      </li>
+      <li role="presentation">
+        <a href="#" class="menu__item js-menu__item" role="menuitem">Paste</a>
+      </li>
+    </ul>
+  </div>
+
+	<!-- End of Pattern -->
+
+	<!--
+		Remember that patterns are displayed from two-levels deep (e.g. patterns/patterntype-patternsubtype-patternname/patterntype-patternsubtype-patternname.html)
+		Therefore all calls to assets should have the ../../ in order to work in an apache-less environment
+	-->
+
+	<!-- DO NOT MODIFY -->
+	<script>
+
+		// alert the iframe parent that the pattern has loaded. for page follow.
+		parent.postMessage( { "url": window.location.host, "patternpartial": "components-table-without-links"},window.location.protocol+"//"+window.location.host);
+
+		// if there are clicks on the iframe make sure the nav in the iframe parent closes
+		var body = document.getElementsByTagName('body');
+		body[0].onclick = function() {
+			parent.postMessage({"bodyclick": "bodyclick"},window.location.protocol+"//"+window.location.host)
+		};
+
+	</script>
+	<!-- /DO NOT MODIFY -->
+  <script src="../../js/vendor/jquery.min.js"></script>
+  <script src="../../js/components/jquery.intrinsic.js"></script>
+  <script src="../../js/components/jquery.dom-utils.js"></script>
+  <script src="../../js/components/jquery.collapse.js"></script>
+  <script src="../../js/components/jquery.nav-tabs.js"></script>
+
+  <script src="../../js/vendor/jquery-ui.custom.js"></script>
+  <script src="../../js/components/drupal.component.js"></script>
+  <script src="../../js/components/drupal.popup.js"></script>
+  <script src="../../js/components/drupal.menu.js"></script>
+
+  <script src="../../js/main.js"></script>
+
+</body>
+</html>

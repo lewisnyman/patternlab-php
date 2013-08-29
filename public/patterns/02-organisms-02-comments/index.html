@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Style Guide for a Specific Pattern Sub-Type</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" href="../../styleguide/css/styleguide.css" media="all" />
+    <link rel="stylesheet" href="../../css/style.css" media="all" />
+</head>
+<body>
+
+<!--Style Guide Main Content-->
+<div class="sg-main" role="main">
+
+	<!--Patterns-->
+	<div id="patterns">
+			<div class="sg-pattern">
+				<h2 class="sg-head sg-sub" ><a href="../../patterns/02-organisms-02-comments-00-comment-thread/02-organisms-02-comments-00-comment-thread.html" class="patternLink" data-patternpartial="organisms-comment-thread">Comment Thread</a></h2>
+				<section class="comments section">
+	<div class="comments-container" id="comments-container">
+		<h2 class="section-title">59 Comments</h2>
+		<ul class="comment-list">
+		</ul>
+	</div>
+	<ul class="pager clearfix leader trailer">
+	    <li class="pager__item pager__item--previous is-disabled">
+	      <a class="pager__link" href="#">
+	        <i class="icon icon--previous"><span class="visually-hidden">Previous</span></i>
+	      </a>
+	    </li>
+	    <li class="pager__item"><a class="pager__link" href="#">1</a></li>
+	    <li class="pager__item"><a class="pager__link" href="#">2</a></li>
+	    <li class="pager__item"><a class="pager__link" href="#">3</a></li>
+	    <li class="pager__item"><a class="pager__link" href="#">4</a></li>
+	    <li class="pager__item"><a class="pager__link is-active" href="#">5</a></li>
+	    <li class="pager__item"><a class="pager__link" href="#">6</a></li>
+	    <li class="pager__item"><a class="pager__link" href="#">7</a></li>
+	    <li class="pager__item"><a class="pager__link" href="#">8</a></li>
+	    <li class="pager__item"><a class="pager__link" href="#">9</a></li>
+	    <li class="pager__item pager__item--next">
+	      <a class="pager__link" href="#">
+	        <i class="icon icon--next"><span class="visually-hidden">Previous</span></i>
+	      </a>
+	    </li>
+	  </ul>
+</section>
+			</div>
+	</div> <!--end #patterns-->
+
+</div><!--end .sg-main-->
+<script>
+	var body = document.getElementsByTagName('body');
+	body[0].onclick = function() {
+		parent.postMessage({"bodyclick":"bodyclick"},window.location.protocol+"//"+window.location.host)
+	};
+	var els = document.getElementsByClassName("patternLink");
+	for (i in els) {
+		els[i].onclick = function() {
+			parent.postMessage({"patternpartial":this.getAttribute("data-patternpartial")},window.location.protocol+"//"+window.location.host);
+			return false;
+		}
+	}
+</script>
+	<script src="../../js/components/jquery.intrinsic.js"></script>
+  <script src="../../js/components/jquery.dom-utils.js"></script>
+  <script src="../../js/components/jquery.collapse.js"></script>
+  <script src="../../js/components/jquery.nav-tabs.js"></script>
+
+  <script src="../../js/vendor/jquery-ui.custom.js"></script>
+  <script src="../../js/components/drupal.component.js"></script>
+
+  <script src="../../js/main.js"></script>
+</body>
+</html>

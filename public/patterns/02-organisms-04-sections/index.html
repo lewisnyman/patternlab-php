@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Style Guide for a Specific Pattern Sub-Type</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" href="../../styleguide/css/styleguide.css" media="all" />
+    <link rel="stylesheet" href="../../css/style.css" media="all" />
+</head>
+<body>
+
+<!--Style Guide Main Content-->
+<div class="sg-main" role="main">
+
+	<!--Patterns-->
+	<div id="patterns">
+			<div class="sg-pattern">
+				<h2 class="sg-head sg-sub" ><a href="../../patterns/02-organisms-04-sections-00-latest-posts/02-organisms-04-sections-00-latest-posts.html" class="patternLink" data-patternpartial="organisms-latest-posts">Latest Posts</a></h2>
+				<section class="section latest-posts">
+	<h2 class="section-title">Latest Posts</h2>
+	<ul class="post-list">
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+	</ul>
+	<a href="#" class="text-btn">View more posts</a>
+</section>
+			</div>
+			<div class="sg-pattern">
+				<h2 class="sg-head sg-sub" ><a href="../../patterns/02-organisms-04-sections-01-recent-tweets/02-organisms-04-sections-01-recent-tweets.html" class="patternLink" data-patternpartial="organisms-recent-tweets">Recent Tweets</a></h2>
+				<section class="section related-posts">
+	<h3 class="section-title">Recent Tweets</h3>
+	<ul class="headline-list">
+		<li><h4><a href="#">Headline Lorem ipsum dolor sit amet</a></h4> </li>
+		<li><h4><a href="#">Laborum, molestiae, rerum, dolores eveniet </a></h4> </li>
+		<li><h4><a href="#">quae est fugit distinctio iure odit minus non ipsum </a></h4> </li>
+		<li><h4><a href="#">dolorum deserunt omnis voluptates voluptatum</a></h4> </li>
+		<li><h4><a href="#">nventore dignissimos vel molestiae, rerum, dolore</a></h4> </li>
+		<li><h4><a href="#"></a></h4></li>
+	</ul>
+	<a href="#" class="text-btn">Follow us on Twitter</a>
+</section>
+			</div>
+			<div class="sg-pattern">
+				<h2 class="sg-head sg-sub" ><a href="../../patterns/02-organisms-04-sections-02-related-posts/02-organisms-04-sections-02-related-posts.html" class="patternLink" data-patternpartial="organisms-related-posts">Related Posts</a></h2>
+				<section class="section related-posts">
+	<h3 class="section-title">Related Posts</h3>
+	<ul class="headline-list">
+		<li><h4><a href="#">Headline Lorem ipsum dolor sit amet</a></h4></li>
+		<li><h4><a href="#">Laborum, molestiae, rerum, dolores eveniet </a></h4></li>
+		<li><h4><a href="#">quae est fugit distinctio iure odit minus non ipsum </a></h4></li>
+		<li><h4><a href="#">dolorum deserunt omnis voluptates voluptatum</a></h4></li>
+		<li><h4><a href="#">nventore dignissimos vel molestiae, rerum, dolore</a></h4></li>
+		<li><h4><a href="#"></a></h4></li>
+	</ul>
+</section>
+			</div>
+	</div> <!--end #patterns-->
+
+</div><!--end .sg-main-->
+<script>
+	var body = document.getElementsByTagName('body');
+	body[0].onclick = function() {
+		parent.postMessage({"bodyclick":"bodyclick"},window.location.protocol+"//"+window.location.host)
+	};
+	var els = document.getElementsByClassName("patternLink");
+	for (i in els) {
+		els[i].onclick = function() {
+			parent.postMessage({"patternpartial":this.getAttribute("data-patternpartial")},window.location.protocol+"//"+window.location.host);
+			return false;
+		}
+	}
+</script>
+	<script src="../../js/components/jquery.intrinsic.js"></script>
+  <script src="../../js/components/jquery.dom-utils.js"></script>
+  <script src="../../js/components/jquery.collapse.js"></script>
+  <script src="../../js/components/jquery.nav-tabs.js"></script>
+
+  <script src="../../js/vendor/jquery-ui.custom.js"></script>
+  <script src="../../js/components/drupal.component.js"></script>
+
+  <script src="../../js/main.js"></script>
+</body>
+</html>

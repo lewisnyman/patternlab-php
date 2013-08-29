@@ -1,0 +1,62 @@
+/**
+ * @file
+ * Button Group
+ *
+ * A horizontal array of UI Buttons.
+ */
+
+.button-group {
+  display: inline-block;
+}
+/* Clearfix manually to avoid needing to add a utility class to the markup */
+.button-group:after {
+  content: ' ';
+  display: block;
+  clear: both;
+}
+
+.button-group > .button {
+  float: left;
+}
+
+/* ==========================================================================
+   Skin
+   ========================================================================== */
+
+/* Compensate for all buttons pulled left by 1px */
+.button-group {
+  padding-left: 1px;
+}
+
+/**
+ * The child selector is appropriate here because these styles are inherently
+ * tied to the button-group situation and are unlikely to be useful elsewhere.
+ *
+ * 1. Remove any border-radius on all buttons, to be re-added on outer
+ *    buttons only.
+ * 2. Collapse borders on adjacent buttons
+ * 3. Tighten the inner padding. Without border-radius, it’s not needed.
+ */
+.button-group > .button {
+  border-radius: 0;  /* 1 */
+  margin-left: -1px;  /* 2 */
+  padding-left: .75em;  /* 3 */
+  padding-right: .75em; /* " */
+}
+
+/**
+ * Re-apply the normal button border-radius to the outer buttons in the group.
+ *
+ * N.B. These styles don’t need to support IE8, since it doesn’t support
+ * border-radius in the first place.
+ */
+.button-group > .button:first-of-type {
+  border-top-left-radius: 20em;
+  border-bottom-left-radius: 20em;
+  padding-left: 1em;
+}
+.button-group > .button:last-of-type {
+  border-top-right-radius: 20em;
+  border-bottom-right-radius: 20em;
+  padding-right: 1em;
+}

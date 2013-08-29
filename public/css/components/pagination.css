@@ -1,0 +1,49 @@
+.pager__item {
+  color: #8c8c8c;
+  float: left;
+  padding: 0 5px;
+}
+
+.pager__link {
+  border-bottom: 2px solid transparent;
+  display: block;
+  line-height: 22px;
+  padding: 0 5px;
+  text-decoration: none !important;
+  transition: all 0.2s;
+  font-weight: 600;
+  -webkit-font-smoothing: antialiased;
+}
+
+.pager__link:focus,
+.pager__link:hover {
+  border-bottom-color: #3395d2;
+  color: #3395d2;
+}
+
+.pager__link.is-active {
+  border-bottom-width: 3px;
+  border-bottom-color: #2a678c;
+  color: #2a678c;
+  font-weight: 700;
+}
+
+/* @todo These styles should not be needed. If the final implementation uses a
+         webfont for icons and the icons do not align correctly with type on the
+         same line, the webfont metrics probably need to be fixed instead. */
+.pager .icon--next,
+.pager .icon--previous{
+position: relative;
+top: 2px;
+}
+
+.pager__item--next .pager__link:hover,
+.pager__item--previous .pager__link:hover {
+  border-bottom-color: transparent;
+}
+
+.pager__item.is-disabled .pager__link {
+  color: #999;
+  border: none;
+  cursor: default;
+}

@@ -1,0 +1,42 @@
+.overlay {
+  background: rgba(0,0,0,.7);
+  outline: 9999px solid rgba(0,0,0,.7);
+}
+
+.overlay__close {
+  background: transparent url(../../_images/overlay-close.png) no-repeat 0 0;
+  float: right;
+  height: 14px;
+  width: 14px;
+  margin-top: 5px;
+}
+
+.overlay__content-header {
+  background: rgba(107,107,107,0.65);
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  padding: 20px;
+}
+
+.overlay__content-header__title {
+  color: #fff;
+  font-weight: 400;
+}
+
+.overlay__tabs {
+  background: rgba(107,107,107,0.65);
+}
+
+.overlay__secondary-tabs {
+  background: #fff;
+}
+
+.overlay__main {
+  background: #fff;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+.overlay__main__content {
+  padding: 0 20px 20px 20px;
+}

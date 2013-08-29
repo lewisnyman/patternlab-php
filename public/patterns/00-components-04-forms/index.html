@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Style Guide for a Specific Pattern Sub-Type</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" href="../../styleguide/css/styleguide.css" media="all" />
+    <link rel="stylesheet" href="../../css/style.css" media="all" />
+</head>
+<body>
+
+<!--Style Guide Main Content-->
+<div class="sg-main" role="main">
+
+	<!--Patterns-->
+	<div id="patterns">
+			<div class="sg-pattern">
+				<h2 class="sg-head sg-sub" ><a href="../../patterns/00-components-04-forms-00-text-fields/00-components-04-forms-00-text-fields.html" class="patternLink" data-patternpartial="components-text-fields">Text Fields</a></h2>
+				<form>
+      <div class="block-sibling">
+
+        <label>Text field</label>
+        <input type="text" class="input-text" />
+
+      </div>
+      <div class="block-sibling">
+
+        <label>Text field</label>
+        <input type="text" class="input-text is-disabled" disabled />
+        <p class="form-item-description">This text field is disabled.</p>
+
+      </div>
+      <div class="block-sibling">
+
+        <label class="is-invalid">Text field*</label>
+        <input type="text" class="input-text is-invalid" />
+        <p class="form-item-description is-invalid">Title is required.</p>
+
+      </div>
+      <div class="block-sibling">
+
+        <label>Text field</label>
+        <input type="text" class="input-text" />
+
+      </div>
+      <div class="block-sibling">
+
+        <label>Password</label>
+        <input type="password" class="input-text" />
+
+      </div>
+      <div class="block-sibling">
+
+        <label>Web Address</label>
+        <input type="url" class="input-text" />
+
+      </div>
+      <div class="block-sibling">
+
+        <label>Email Address</label>
+        <input type="email" class="input-text" />
+
+      </div>
+      <div class="block-sibling">
+
+        <label>Textarea</label>
+        <textarea class="textarea"></textarea>
+
+      </div>
+    </form>
+
+			</div>
+			<div class="sg-pattern">
+				<h2 class="sg-head sg-sub" ><a href="../../patterns/00-components-04-forms-01-search/00-components-04-forms-01-search.html" class="patternLink" data-patternpartial="components-search">Search</a></h2>
+				<form action="#" method="post" class="inline-form search-form">
+  <label>Search</label>
+      <input type="search" class="input-search" placeholder="Enter keyword(s)" />
+      <input type="submit" class="button search" value="Search" />
+</form>
+
+			</div>
+			<div class="sg-pattern">
+				<h2 class="sg-head sg-sub" ><a href="../../patterns/00-components-04-forms-02-select-menu/00-components-04-forms-02-select-menu.html" class="patternLink" data-patternpartial="components-select-menu">Select Menu</a></h2>
+				<form>
+    <label for="select">Select</label>
+    <select id="select">
+        <optgroup label="Option Group">
+            <option>Option One</option>
+            <option>Option Two</option>
+            <option>Option Three</option>
+        </optgroup>
+    </select>
+</form>
+
+			</div>
+			<div class="sg-pattern">
+				<h2 class="sg-head sg-sub" ><a href="../../patterns/00-components-04-forms-03-fieldset/00-components-04-forms-03-fieldset.html" class="patternLink" data-patternpartial="components-fieldset">Fieldset</a></h2>
+				<form>
+
+      <fieldset class="pane">
+        <legend class="heading-c">I am legend</legend>
+        <div class="clearfix">
+          <label>Text field</label>
+          <input type="text" class="input-text" />
+        </div>
+      </fieldset>
+
+    </form>
+
+			</div>
+			<div class="sg-pattern">
+				<h2 class="sg-head sg-sub" ><a href="../../patterns/00-components-04-forms-04-checkbox/00-components-04-forms-04-checkbox.html" class="patternLink" data-patternpartial="components-checkbox">Checkbox</a></h2>
+				<form action="#">
+  <ul>
+      <li><label for="checkbox1"><input id="checkbox1" name="checkbox" type="checkbox" checked="checked"> Choice A</label></li>
+      <li><label for="checkbox2"><input id="checkbox2" name="checkbox" type="checkbox"> Choice B</label></li>
+      <li><label for="checkbox3"><input id="checkbox3" name="checkbox" type="checkbox"> Choice C</label></li>
+  </ul>
+</form>
+
+			</div>
+			<div class="sg-pattern">
+				<h2 class="sg-head sg-sub" ><a href="../../patterns/00-components-04-forms-05-radio-buttons/00-components-04-forms-05-radio-buttons.html" class="patternLink" data-patternpartial="components-radio-buttons">Radio Buttons</a></h2>
+				<form action="#">
+  <ul>
+      <li><label for="radio1"><input id="radio1" name="radio" type="radio" class="radio" checked="checked"> Option 1</label></li>
+      <li><label for="radio2"><input id="radio2" name="radio" type="radio" class="radio"> Option 2</label></li>
+      <li><label for="radio3"><input id="radio3" name="radio" type="radio" class="radio"> Option 3</label></li>
+  </ul>
+</form>
+
+			</div>
+			<div class="sg-pattern">
+				<h2 class="sg-head sg-sub" ><a href="../../patterns/00-components-04-forms-06-html5-inputs/00-components-04-forms-06-html5-inputs.html" class="patternLink" data-patternpartial="components-html5-inputs">Html5 Inputs</a></h2>
+				<form>
+  <div class="field-container"><label for="ic">Color input</label> <input type="color" id="ic" value="#000000"></div>
+  <div class="field-container"><label for="in">Number input</label> <input type="number" id="in" min="0" max="10" value="5"></div>
+  <div class="field-container"><label for="ir">Range input</label> <input type="range" id="ir" value="10"></div>
+  <div class="field-container"><label for="idd">Date input</label> <input type="date" id="idd" value="1970-01-01"></div>
+  <div class="field-container"><label for="idm">Month input</label> <input type="month" id="idm" value="1970-01"></div>
+  <div class="field-container"><label for="idw">Week input</label> <input type="week" id="idw" value="1970-W01"></div>
+  <div class="field-container"><label for="idt">Datetime input</label> <input type="datetime" id="idt" value="1970-01-01T00:00:00Z"></div>
+  <div class="field-container"><label for="idtl">Datetime-local input</label> <input type="datetime-local" id="idtl" value="1970-01-01T00:00"></div>
+</form>
+
+			</div>
+	</div> <!--end #patterns-->
+
+</div><!--end .sg-main-->
+<script>
+	var body = document.getElementsByTagName('body');
+	body[0].onclick = function() {
+		parent.postMessage({"bodyclick":"bodyclick"},window.location.protocol+"//"+window.location.host)
+	};
+	var els = document.getElementsByClassName("patternLink");
+	for (i in els) {
+		els[i].onclick = function() {
+			parent.postMessage({"patternpartial":this.getAttribute("data-patternpartial")},window.location.protocol+"//"+window.location.host);
+			return false;
+		}
+	}
+</script>
+	<script src="../../js/components/jquery.intrinsic.js"></script>
+  <script src="../../js/components/jquery.dom-utils.js"></script>
+  <script src="../../js/components/jquery.collapse.js"></script>
+  <script src="../../js/components/jquery.nav-tabs.js"></script>
+
+  <script src="../../js/vendor/jquery-ui.custom.js"></script>
+  <script src="../../js/components/drupal.component.js"></script>
+
+  <script src="../../js/main.js"></script>
+</body>
+</html>

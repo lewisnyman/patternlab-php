@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Pattern Lab Pattern</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width" />
+	
+	<!--
+		Remember that patterns are displayed from two-levels deep (e.g. patterns/patterntype-patternsubtype-patternname/patterntype-patternsubtype-patternname.html)
+		Therefore all calls to assets should have the ../../ in order to work in an apache-less environment
+	-->
+	<link rel="stylesheet" href="../../css/style.css" media="all" />
+	<script src="../../js/modernizr.js"></script>
+</head>
+<body>
+	
+	<!-- Start of Pattern -->
+    <ul class="clearfix">
+      <li class="inline-sibling">
+
+        <button class="button button--popup js-popup" type="button" aria-haspopup="true" data-target="popup-2" data-component="popup">Dropdown <i class="caret" aria-hidden="true"></i></button>
+
+        <div class="popup" id="popup-2" aria-hidden="true">
+          <ul class="menu js-menu" role="menu" data-component="menu" tabindex="-1">
+            <li role="presentation">
+              <button class="menu__item js-menu__item" type="button" role="menuitem" id="ui-id-7">Button option</button>
+            </li>
+            <li role="presentation">
+              <input class="menu__item js-menu__item" type="submit" role="menuitem" value="Input option" id="ui-id-8">
+            </li>
+            <li role="presentation">
+              <a href="#" class="menu__item js-menu__item" role="menuitem" id="ui-id-9">Link option</a>
+            </li>
+          </ul>
+        </div>
+
+      </li>
+
+      <li class="inline-sibling">
+
+        <button class="button button--popup js-popup" type="button" aria-haspopup="true" data-target="popup-3" data-component="popup">Dropdown <i class="caret" aria-hidden="true"></i></button>
+
+        <div class="popup" id="popup-3" aria-hidden="true">
+          <ul class="menu js-menu" role="menu" data-component="menu" tabindex="-1">
+            <li role="presentation">
+              <a href="#" class="menu__item js-menu__item" role="menuitem" id="ui-id-10">Eeney</a>
+            </li>
+            <li role="presentation">
+              <a href="#" class="menu__item js-menu__item" role="menuitem" id="ui-id-11">Meeney</a>
+            </li>
+            <li role="presentation">
+              <a href="#" class="menu__item js-menu__item" role="menuitem" id="ui-id-12">Miney</a>
+            </li>
+            <li role="presentation">
+              <a href="#" class="menu__item js-menu__item" role="menuitem" id="ui-id-13">Mo</a>
+            </li>
+          </ul>
+        </div>
+
+      </li>
+    </ul>
+
+    <div class="leader">
+      <div class="button-group js-split-button">
+        <button class="button" type="button">Button</button>
+        <button class="button button--iconic button--popup js-popup" type="button" aria-haspopup="true" data-target="popup-4" data-component="popup"><i class="caret"><span class="visually-hidden">Menu</span></i></button>
+      </div>
+
+      <div class="popup" id="popup-4" aria-hidden="true">
+        <ul class="menu js-menu" role="menu" data-component="menu" tabindex="-1">
+          <li role="presentation">
+            <a href="#" class="menu__item js-menu__item" role="menuitem" id="ui-id-14">Cut</a>
+          </li>
+          <li role="presentation">
+            <a href="#" class="menu__item js-menu__item" role="menuitem" id="ui-id-15">Copy</a>
+          </li>
+          <li role="presentation">
+            <a href="#" class="menu__item js-menu__item" role="menuitem" id="ui-id-16">Paste</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="leader">
+      <div class="button-group">
+        <button class="button" type="button">Sleepy</button>
+        <button class="button button--popup js-popup" type="button" aria-haspopup="true" data-target="popup-5" data-component="popup">Sneezy <i class="caret" aria-hidden="true"></i></button>
+        <button class="button" type="button">Dopey</button>
+
+        <div class="popup" id="popup-5" aria-hidden="true">
+          <ul class="menu js-menu" role="menu" data-component="menu" tabindex="-1">
+            <li role="presentation">
+              <a href="#" class="menu__item js-menu__item" role="menuitem" id="ui-id-17">Show navbar</a>
+            </li>
+            <li role="presentation">
+              <a href="#" class="menu__item js-menu__item" role="menuitem" id="ui-id-18">Show sidebar</a>
+            </li>
+            <li role="presentation">
+              <a href="#" class="menu__item js-menu__item" role="menuitem" id="ui-id-19">Show minibar</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+	<!-- End of Pattern -->
+
+	<!--
+		Remember that patterns are displayed from two-levels deep (e.g. patterns/patterntype-patternsubtype-patternname/patterntype-patternsubtype-patternname.html)
+		Therefore all calls to assets should have the ../../ in order to work in an apache-less environment
+	-->
+
+	<!-- DO NOT MODIFY -->
+	<script>
+
+		// alert the iframe parent that the pattern has loaded. for page follow.
+		parent.postMessage( { "url": window.location.host, "patternpartial": "components-extended-buttons"},window.location.protocol+"//"+window.location.host);
+
+		// if there are clicks on the iframe make sure the nav in the iframe parent closes
+		var body = document.getElementsByTagName('body');
+		body[0].onclick = function() {
+			parent.postMessage({"bodyclick": "bodyclick"},window.location.protocol+"//"+window.location.host)
+		};
+
+	</script>
+	<!-- /DO NOT MODIFY -->
+  <script src="../../js/vendor/jquery.min.js"></script>
+  <script src="../../js/components/jquery.intrinsic.js"></script>
+  <script src="../../js/components/jquery.dom-utils.js"></script>
+  <script src="../../js/components/jquery.collapse.js"></script>
+  <script src="../../js/components/jquery.nav-tabs.js"></script>
+
+  <script src="../../js/vendor/jquery-ui.custom.js"></script>
+  <script src="../../js/components/drupal.component.js"></script>
+  <script src="../../js/components/drupal.popup.js"></script>
+  <script src="../../js/components/drupal.menu.js"></script>
+
+  <script src="../../js/main.js"></script>
+
+</body>
+</html>

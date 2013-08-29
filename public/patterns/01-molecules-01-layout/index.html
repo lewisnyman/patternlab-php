@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Style Guide for a Specific Pattern Sub-Type</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" href="../../styleguide/css/styleguide.css" media="all" />
+    <link rel="stylesheet" href="../../css/style.css" media="all" />
+</head>
+<body>
+
+<!--Style Guide Main Content-->
+<div class="sg-main" role="main">
+
+	<!--Patterns-->
+	<div id="patterns">
+			<div class="sg-pattern">
+				<h2 class="sg-head sg-sub" ><a href="../../patterns/01-molecules-01-layout-00-full-width/01-molecules-01-layout-00-full-width.html" class="patternLink" data-patternpartial="molecules-full-width">Full Width</a></h2>
+				<div class="l-container">
+  <div class="demo-block"></div>
+</div><!--end .l-container-->
+
+			</div>
+			<div class="sg-pattern">
+				<h2 class="sg-head sg-sub" ><a href="../../patterns/01-molecules-01-layout-01-half-and-half/01-molecules-01-layout-01-half-and-half.html" class="patternLink" data-patternpartial="molecules-half-and-half">Half And Half</a></h2>
+				<div class="l-container">
+  <div class="l-grid l-grid--half"><div class="demo-block"></div></div>
+  <div class="l-grid l-grid--half"><div class="demo-block"></div></div>
+</div><!--end .l-container-->
+
+			</div>
+			<div class="sg-pattern">
+				<h2 class="sg-head sg-sub" ><a href="../../patterns/01-molecules-01-layout-02-thirds/01-molecules-01-layout-02-thirds.html" class="patternLink" data-patternpartial="molecules-thirds">Thirds</a></h2>
+				<div class="l-container">
+  <div class="l-grid l-grid--third"><div class="demo-block"></div></div>
+  <div class="l-grid l-grid--third"><div class="demo-block"></div></div>
+  <div class="l-grid l-grid--third"><div class="demo-block"></div></div>
+</div><!--end .l-container-->
+
+<div class="leader l-container">
+  <div class="l-grid l-grid--two-thirds"><div class="demo-block"></div></div>
+  <div class="l-grid l-grid--third"><div class="demo-block"></div></div>
+</div>
+
+			</div>
+	</div> <!--end #patterns-->
+
+</div><!--end .sg-main-->
+<script>
+	var body = document.getElementsByTagName('body');
+	body[0].onclick = function() {
+		parent.postMessage({"bodyclick":"bodyclick"},window.location.protocol+"//"+window.location.host)
+	};
+	var els = document.getElementsByClassName("patternLink");
+	for (i in els) {
+		els[i].onclick = function() {
+			parent.postMessage({"patternpartial":this.getAttribute("data-patternpartial")},window.location.protocol+"//"+window.location.host);
+			return false;
+		}
+	}
+</script>
+	<script src="../../js/components/jquery.intrinsic.js"></script>
+  <script src="../../js/components/jquery.dom-utils.js"></script>
+  <script src="../../js/components/jquery.collapse.js"></script>
+  <script src="../../js/components/jquery.nav-tabs.js"></script>
+
+  <script src="../../js/vendor/jquery-ui.custom.js"></script>
+  <script src="../../js/components/drupal.component.js"></script>
+
+  <script src="../../js/main.js"></script>
+</body>
+</html>

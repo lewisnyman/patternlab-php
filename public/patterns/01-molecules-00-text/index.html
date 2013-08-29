@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Style Guide for a Specific Pattern Sub-Type</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" href="../../styleguide/css/styleguide.css" media="all" />
+    <link rel="stylesheet" href="../../css/style.css" media="all" />
+</head>
+<body>
+
+<!--Style Guide Main Content-->
+<div class="sg-main" role="main">
+
+	<!--Patterns-->
+	<div id="patterns">
+			<div class="sg-pattern">
+				<h2 class="sg-head sg-sub" ><a href="../../patterns/01-molecules-00-text-00-byline-author-only/01-molecules-00-text-00-byline-author-only.html" class="patternLink" data-patternpartial="molecules-byline-author-only">Byline Author Only</a></h2>
+				<div class="byline">by Author Name</div>
+			</div>
+			<div class="sg-pattern">
+				<h2 class="sg-head sg-sub" ><a href="../../patterns/01-molecules-00-text-01-byline-author-time/01-molecules-00-text-01-byline-author-time.html" class="patternLink" data-patternpartial="molecules-byline-author-time">Byline Author Time</a></h2>
+				<div class="byline">by Author Name on <time datetime="2013-04-06T12:32+00:00">June 3rd</time></div>
+			</div>
+			<div class="sg-pattern">
+				<h2 class="sg-head sg-sub" ><a href="../../patterns/01-molecules-00-text-02-address/01-molecules-00-text-02-address.html" class="patternLink" data-patternpartial="molecules-address">Address</a></h2>
+				<div class="vcard">
+	<div class="org">Company Name</div>
+	<div class="adr">
+		<div class="street-address">1234 Main St.</div>
+		<span class="locality">Anywhere</span>,
+		<span class="postal-code">101010</span>,
+		<abbr class="region" title="California">CA</abbr>
+		<div class="country-name">U.S.A</div>
+	</div>
+	<div class="tel">+1.888.123.4567</div>
+</div>
+			</div>
+			<div class="sg-pattern">
+				<h2 class="sg-head sg-sub" ><a href="../../patterns/01-molecules-00-text-04-blockquote-with-citation/01-molecules-00-text-04-blockquote-with-citation.html" class="patternLink" data-patternpartial="molecules-blockquote-with-citation">Blockquote With Citation</a></h2>
+				<blockquote>
+   	<p>A block quotation (also known as a long quotation or extract) is a quotation in a written document, that is set off from the main text as a paragraph, or block of text, and typically distinguished visually using indentation and a different typeface or smaller size quotation. </p>
+	<cite class="citation">Quote Source</cite>
+</blockquote>
+			</div>
+	</div> <!--end #patterns-->
+
+</div><!--end .sg-main-->
+<script>
+	var body = document.getElementsByTagName('body');
+	body[0].onclick = function() {
+		parent.postMessage({"bodyclick":"bodyclick"},window.location.protocol+"//"+window.location.host)
+	};
+	var els = document.getElementsByClassName("patternLink");
+	for (i in els) {
+		els[i].onclick = function() {
+			parent.postMessage({"patternpartial":this.getAttribute("data-patternpartial")},window.location.protocol+"//"+window.location.host);
+			return false;
+		}
+	}
+</script>
+	<script src="../../js/components/jquery.intrinsic.js"></script>
+  <script src="../../js/components/jquery.dom-utils.js"></script>
+  <script src="../../js/components/jquery.collapse.js"></script>
+  <script src="../../js/components/jquery.nav-tabs.js"></script>
+
+  <script src="../../js/vendor/jquery-ui.custom.js"></script>
+  <script src="../../js/components/drupal.component.js"></script>
+
+  <script src="../../js/main.js"></script>
+</body>
+</html>
