@@ -1,7 +1,7 @@
 <?php
 
 /*!
- * Pattern Lab Builder Class - v0.1
+ * Pattern Lab Builder Class - v0.3.4
  *
  * Copyright (c) 2013 Dave Olsen, http://dmolsen.com
  * Licensed under the MIT license
@@ -10,7 +10,7 @@
  *
  */
 
-class Builder {
+class Buildr {
 
 	// i was lazy when i started this project & kept (mainly) to two letter vars. sorry.
 	protected $mpl;               // mustache pattern loader instance
@@ -51,7 +51,7 @@ class Builder {
 			// if the variables are array-like make sure the properties are validated/trimmed/lowercased before saving
 			if (($key == "ie") || ($key == "id")) {
 				$values = explode(",",$value);
-				array_walk($values,'Builder::trim');
+				array_walk($values,'Buildr::trim');
 				$this->$key = $values;
 			} else {
 				$this->$key = $value;
@@ -127,7 +127,7 @@ class Builder {
 		$sd = $this->gatherPartials();
 		
 		// sort partials by patternLink
-		usort($sd['partials'], "Builder::sortPartials");
+		usort($sd['partials'], "Buildr::sortPartials");
 		
 		// render the "view all" pages
 		$this->generateViewAllPages();
@@ -214,6 +214,7 @@ class Builder {
 								
 								// get all the rendered partials that match
 								$sid = $this->gatherPartialsByMatch($patternType, $patternSubType);
+								$sid["patternPartial"] = $subItem["patternPartial"];
 								
 								// render the viewall template
 								$v = $this->mfs->render('viewall',$sid);
@@ -300,14 +301,14 @@ class Builder {
 			foreach($patterns as $pattern => $path) {
 				$patternName = $patternTypeName."-".$pattern;
 				$path = str_replace("/","-",$path);
-				$this->d->link->$patternName = "/patterns/".$path."/".$path.".html";
+				$this->d->link->$patternName = "../../patterns/".$path."/".$path.".html";
 			}
 			
 		}
 		
 		// add pattern specific data so it can override when a pattern (not partial!) is rendered
 		// makes 'patternSpecific' a reserved word
-		$this->d->patternSpecifc = new stdClass();
+		$this->d->patternSpecific = new stdClass();
 		foreach($this->patternTypes as $patternType) {
 			
 			// $this->d->patternSpecific["pattern-name-that-matches-render.mustache"] = array of data;
@@ -345,6 +346,7 @@ class Builder {
 		$b  = array("buckets" => array()); // the array that will contain the items
 		$bi = 0;                           // track the number for the bucket array
 		$ni = 0;                           // track the number for the nav items array
+		$incrementNavItem = true;          // track nav item regeneration so we avoid rebuilding view all pages
 		
 		// iterate through each pattern type and add them as buckets
 		foreach($this->patternTypes as $patternType) {
@@ -377,6 +379,12 @@ class Builder {
 																	 "patternPartial" => str_replace(" ","-",$bucket)."-".str_replace(" ","-",$patternFinal));
 					}
 					
+				}
+				
+				// if all of the patterns for a given pattern type (e.g. atoms) were commented out we need to unset it
+				if (!isset($b["buckets"][$bi]["patternItems"])) {
+					unset($b["buckets"][$bi]);
+					$bi--;
 				}
 				
 			} else {
@@ -412,6 +420,12 @@ class Builder {
 						
 						}
 						
+						// if all of the patterns for a given sub-type were commented out we need to unset it
+						if (!isset($b["buckets"][$bi]["navItems"][$ni]["navSubItems"])) {
+							unset($b["buckets"][$bi]["navItems"][$ni]);
+							$incrementNavItem = false;
+						}
+						
 					}
 				
 					// add a view all for the section
@@ -427,7 +441,13 @@ class Builder {
 						$this->viewAllPaths[$vaBucket][$vaDirFinal] = $patternType."-".$dirClean;
 					}
 					
-					$ni++;
+					// this feels like such a hacky way of doing it
+					if (!$incrementNavItem) {
+						$incrementNavItem = true;
+					} else {
+						$ni++;
+					}
+					
 				}
 			}
 			
@@ -689,15 +709,13 @@ class Builder {
 	* @return {Boolean}      whether the directory should be ignored
 	*/
 	protected function ignoreDir($fileName) {
-		$y = false;
 		foreach($this->id as $dir) {
-			$pos = strpos($fileName,"/".$dir."/");
+			$pos = strpos(DIRECTORY_SEPARATOR.$fileName,DIRECTORY_SEPARATOR.$dir.DIRECTORY_SEPARATOR);
 			if ($pos !== false) {
-				$y = true;
-				break;
+				return true;
 			}
 		}
-		return $y;
+		return false;
 	}
 	
 	/**

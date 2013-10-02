@@ -12,9 +12,9 @@
 
 var urlHandler = {
 	
-	// if true it'll make sure iFrames and history aren't updated on back button click
-	doPop:    true,
+	// set-up some default vars
 	skipBack: false,
+	targetOrigin: (window.location.protocol == "file:") ? "*" : window.location.protocol+"//"+window.location.host,
 	
 	/**
 	* get the real file name for a given pattern name
@@ -29,6 +29,10 @@ var urlHandler = {
 		
 		if (name == undefined) {
 			return fileName;
+		}
+		
+		if (name == "all") {
+			return "styleguide/html/styleguide.html";
 		}
 		
 		var paths = (name.indexOf("viewall-") != -1) ? viewAllPaths : patternPaths;
@@ -118,44 +122,59 @@ var urlHandler = {
 	/**
 	* push a pattern onto the current history based on a click
 	* @param  {String}       the shorthand partials syntax for a given pattern
+	* @param  {String}       the path given by the loaded iframe
 	*/
-	pushPattern: function (pattern) {
-		History.pushState({ "pattern": pattern }, null, window.location.protocol+"//"+window.location.host+window.location.pathname.replace("index.html","")+"?p="+pattern);
+	pushPattern: function (pattern, givenPath) {
+		var data         = { "pattern": pattern };
+		var fileName     = urlHandler.getFileName(pattern);
+		var expectedPath = window.location.protocol+"//"+window.location.host+window.location.pathname.replace("public/index.html","public/")+fileName;
+		if (givenPath != expectedPath) {
+			// make sure to update the iframe because there was a click
+			document.getElementById("sg-viewport").contentWindow.postMessage( { "path": fileName }, urlHandler.targetOrigin);
+		} else {
+			// add to the history
+			var addressReplacement = (window.location.protocol == "file:") ? null : window.location.protocol+"//"+window.location.host+window.location.pathname.replace("index.html","")+"?p="+pattern;
+			history.pushState(data, null, addressReplacement);
+			document.getElementById("title").innerHTML = "Pattern Lab - "+pattern;
+		}
 	},
 	
 	/**
 	* based on a click forward or backward modify the url and iframe source
 	* @param  {Object}      event info like state and properties set in pushState()
 	*/
-	popPattern: function (state) {
+	popPattern: function (e) {
 		
-		if (state.data == null) {
+		var state = e.state;
+		
+		if (state == null) {
+			this.skipBack = false;
 			return;
-		}
-		
-		// make sure that the iframe message stuff is skipped
-		this.skipBack = true;
+		} else if (state != null) {
+			var patternName = state.pattern;
+		} 
 		
 		var iFramePath = "";
-		iFramePath = this.getFileName(state.data.pattern);
+		iFramePath = this.getFileName(patternName);
 		if (iFramePath == "") {
-			iFramePath = window.location.protocol+"//"+window.location.host+window.location.pathname.replace("index.html","")+"styleguide/html/styleguide.html";
+			iFramePath = "styleguide/html/styleguide.html";
 		}
 		
-		document.getElementById("sg-viewport").contentWindow.location.replace(iFramePath);
+		document.getElementById("sg-viewport").contentWindow.postMessage( { "path": iFramePath }, urlHandler.targetOrigin);
+		document.getElementById("title").innerHTML = "Pattern Lab - "+patternName;
 		
 		if (wsnConnected) {
-			wsn.send( '{"url": "'+iFramePath+'", "patternpartial": "'+state.data.pattern+'" }' );
+			wsn.send( '{"url": "'+iFramePath+'", "patternpartial": "'+patternName+'" }' );
 		}
 		
 	}
-
+	
 }
 
-History.Adapter.bind(window,'statechange',function(){
-	if (urlHandler.doPop) {
-		var state = History.getState();
-		urlHandler.popPattern(state);
-	}
-	urlHandler.doPop = true;
-});
+/**
+* handle the onpopstate event
+*/
+window.onpopstate = function (event) {
+	urlHandler.skipBack = true;
+	urlHandler.popPattern(event);
+}

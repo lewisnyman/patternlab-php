@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Seven Style Guide</title>
+		<title id="title">Seven Style Guide</title>
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width" />
 		<link rel="stylesheet" href="styleguide/css/styleguide.css" media="all" />
@@ -23,15 +23,13 @@
 		<div id="sg-vp-wrap">
 			<div id="sg-cover"></div>
 			<div id="sg-gen-container">
-				<iframe id="sg-viewport"></iframe>
+				<iframe id="sg-viewport" sandbox="allow-same-origin allow-scripts"></iframe>
 				<div id="sg-rightpull-container">
 					<div id="sg-rightpull"></div>
 				</div>
 			</div>
 		</div>
 		<!--end iFrame-->
-
-		<script src="styleguide/js/native.history.js"></script>
 		<script src="styleguide/js/data-saver.js"></script>
 		{{> patternPaths }}
 		{{> viewAllPaths }}
